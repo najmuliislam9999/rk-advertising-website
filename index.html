@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rk Advertising and Digital House | ব্যানার, ফেস্টুন, ফ্লেক্স, স্টিকার, ভিজিটিং কার্ড</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14100C;
+    --bg-soft:#1D1710;
+    --card:#221A11;
+    --gold:#E8B84B;
+    --gold-light:#F7DE8F;
+    --gold-dark:#A9781F;
+    --cream:#F3EAD8;
+    --muted:#B8AB90;
+    --line:#3A2E1D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Hind Siliguri', sans-serif;
+    background:var(--bg);
+    color:var(--cream);
+    line-height:1.7;
+  }
+  h1,h2,h3,.brand{font-family:'Baloo Bhaijaan 2', sans-serif;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  .crop{position:relative;}
+  .crop::before,.crop::after{
+    content:'';position:absolute;width:14px;height:14px;
+    border:1.5px solid var(--gold);opacity:.4;
+  }
+  .crop::before{top:-7px;left:-7px;border-right:none;border-bottom:none;}
+  .crop::after{bottom:-7px;right:-7px;border-left:none;border-top:none;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(20,16,12,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto;}
+  .brand{font-size:19px;font-weight:700;color:var(--cream);display:flex;align-items:center;gap:8px;}
+  .brand .dot{color:var(--gold);}
+  .nav-cta{display:flex;gap:10px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:6px;
+    font-weight:700;font-size:15px;
+    border:1.5px solid var(--gold);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-dark));color:#1A1207;box-shadow:0 4px 18px rgba(232,184,75,0.25);}
+  .btn-primary:hover{box-shadow:0 6px 24px rgba(232,184,75,0.4);}
+  .btn-outline{background:transparent;color:var(--gold-light);}
+  .btn-outline:hover{background:var(--gold);color:#1A1207;}
+  @media (max-width:640px){ .btn span.long{display:none;} }
+
+  .hero{padding:76px 24px 54px;max-width:1080px;margin:0 auto;text-align:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:700;letter-spacing:.08em;
+    padding:6px 16px;border:1px solid var(--gold-dark);border-radius:999px;margin-bottom:26px;
+    color:var(--gold-light);
+  }
+
+  .gold-title{
+    font-size:48px;line-height:1.28;font-weight:700;
+    background:linear-gradient(100deg, var(--gold-dark) 10%, var(--gold-light) 35%, var(--gold) 50%, var(--gold-light) 65%, var(--gold-dark) 90%);
+    background-size:250% auto;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shine 5s linear infinite;
+    text-shadow:0 2px 24px rgba(232,184,75,0.18);
+  }
+  @keyframes shine{
+    0%{background-position:0% center;}
+    100%{background-position:-250% center;}
+  }
+  @media (prefers-reduced-motion: reduce){ .gold-title{animation:none;} }
+
+  .hero p{font-size:17px;color:var(--muted);max-width:520px;margin:26px auto 30px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+
+  .hero-carousel{
+    margin:40px auto 0;max-width:760px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;
+    position:relative;border:1px solid var(--line);background:var(--bg-soft);
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  }
+  .hero-carousel img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+    transition:opacity 1.1s ease;
+  }
+  .hero-carousel img.active{opacity:1;}
+
+  section{padding:56px 0;}
+  .section-title{
+    font-size:28px;color:var(--cream);font-weight:800;margin-bottom:10px;
+    position:relative;padding-left:18px;letter-spacing:.01em;
+  }
+  .section-title::before{
+    content:'';position:absolute;left:0;top:4px;bottom:4px;width:5px;
+    background:linear-gradient(180deg,var(--gold-light),var(--gold-dark));border-radius:3px;
+  }
+  .section-sub{color:var(--muted);font-size:15px;margin-bottom:34px;max-width:560px;}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    padding:22px 18px;
+    display:flex;flex-direction:column;gap:10px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .card:hover{border-color:var(--gold-dark);transform:translateY(-3px);}
+  .card .icon{font-size:26px;}
+  .card h3{font-size:16px;color:var(--gold-light);font-weight:700;}
+  .card p{font-size:13px;color:var(--muted);}
+  @media (max-width:900px){ .cards{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cards{grid-template-columns:1fr;} }
+
+  .delivery-band{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:4px;
+    padding:36px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .delivery-band h3{font-size:20px;margin-bottom:6px;color:var(--cream);}
+  .delivery-band p{font-size:14.5px;color:var(--muted);max-width:460px;}
+  .delivery-band .badge{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;
+    color:var(--gold);border:1px solid var(--gold-dark);padding:4px 10px;border-radius:999px;margin-bottom:8px;display:inline-block;
+  }
+
+  .steps{display:flex;gap:0;}
+  .step{flex:1;position:relative;padding:0 16px;}
+  .step:not(:last-child)::after{
+    content:'';position:absolute;top:22px;right:-8px;width:calc(100% - 20px);height:1px;
+    background:var(--line);
+  }
+  @media (max-width:768px){ .step:not(:last-child)::after{display:none;} .steps{flex-direction:column;gap:24px;} }
+  .step-num{
+    width:44px;height:44px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold-dark));color:#1A1207;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;
+    margin-bottom:14px;position:relative;z-index:1;font-family:'Baloo Bhaijaan 2',sans-serif;
+  }
+  .step h3{font-size:16px;color:var(--cream);margin-bottom:6px;font-weight:700;}
+  .step p{font-size:13.5px;color:var(--muted);}
+
+  .contact-band{
+    background:var(--bg-soft);border:1px solid var(--gold-dark);border-radius:4px;padding:44px 32px;
+    display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;
+  }
+  .contact-band h2{color:var(--gold-light);font-size:25px;margin-bottom:10px;}
+  .contact-band p{color:var(--muted);font-size:15px;max-width:420px;}
+  .contact-links{display:flex;flex-direction:column;gap:12px;}
+  .contact-links .btn{justify-content:center;width:100%;font-size:16px;padding:14px;}
+  @media (max-width:768px){ .contact-band{grid-template-columns:1fr;} }
+
+  footer{padding:32px 24px;text-align:center;font-size:13px;color:var(--muted);}
+
+  .float-wa{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    width:56px;height:56px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(37,211,102,0.45);
+  }
+  .float-wa svg{width:28px;height:28px;}
+
+  /* Banner gallery lightbox */
+  .gallery-overlay{
+    position:fixed;inset:0;background:rgba(10,8,5,0.92);z-index:100;
+    display:none;align-items:center;justify-content:center;padding:24px;
+  }
+  .gallery-overlay.open{display:flex;}
+  .gallery-box{
+    background:var(--bg-soft);border:1px solid var(--gold-dark);border-radius:8px;
+    max-width:820px;width:100%;max-height:85vh;overflow-y:auto;padding:28px;
+    position:relative;
+  }
+  .gallery-box h3{color:var(--gold-light);font-size:20px;margin-bottom:6px;}
+  .gallery-box .sub{color:var(--muted);font-size:14px;margin-bottom:20px;}
+  .gallery-close{
+    position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;
+    background:var(--card);border:1px solid var(--line);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;
+  }
+  .gallery-close:hover{border-color:var(--gold);}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:640px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+  .gallery-tile{
+    aspect-ratio:4/3;border:1.5px dashed var(--line);border-radius:6px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    color:var(--muted);font-size:12.5px;background:var(--card);
+  }
+  .gallery-tile .cam{font-size:22px;}
+  .gallery-tile.has-img{border:1px solid var(--line);padding:0;overflow:hidden;}
+  .gallery-tile.has-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  @media (max-width:900px){
+    .gold-title{font-size:32px;}
+  }
+
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">RK <span class="dot">●</span> Advertising & Digital House</div>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="tel:+8801796216833"><span class="long">কল করুন</span> 📞</a>
+      <a class="btn btn-primary" href="https://wa.me/8801796216833" target="_blank" rel="noopener"><span class="long">WhatsApp</span> 💬</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">✦ প্রিন্ট ও ডিজাইন হাউজ — অর্ডার হোম ডেলিভারিও পাবেন</span>
+    <h1 class="gold-title">যা প্রিন্ট লাগবে, সবই এক জায়গায়</h1>
+    <p>ব্যানার থেকে ভিজিটিং কার্ড — ডিজাইন থেকে প্রিন্ট, সব একই দোকানে। মেসেজ করুন অথবা দোকানে আসুন, অর্ডার করলে বাসাতেও পৌঁছে দেই।</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/8801796216833" target="_blank" rel="noopener">অর্ডার করুন 💬</a>
+      <a class="btn btn-outline" href="tel:+8801796216833">📞 01796-216833</a>
+    </div>
+    <div class="hero-carousel" id="heroCarousel"></div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">আমাদের প্রিন্ট সার্ভিস</h2>
+    <p class="section-sub">সব ধরনের ব্যানার, প্রিন্ট ও ডিজাইনের কাজ করা হয় — যেকোনো সাইজ, যেকোনো পরিমাণ।</p>
+    <div class="cards">
+      <div class="card crop" onclick="openGallery('banner')" data-cat="banner" style="cursor:pointer;">
+        <div class="icon" id="icon-banner">🖼️</div>
+        <h3>ব্যানার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3>
+        <p>সব সাইজের ব্যানার প্রিন্ট, দ্রুত ডেলিভারিসহ। কার্ডে ক্লিক করে করা কাজের ছবি দেখুন।</p>
+      </div>
+      <div class="card crop" onclick="openGallery('festoon')" data-cat="festoon" style="cursor:pointer;"><div class="icon" id="icon-festoon">🎪</div><h3>ফেস্টুন <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>অনুষ্ঠান, উদ্বোধন বা প্রচারণার জন্য ফেস্টুন।</p></div>
+      <div class="card crop" onclick="openGallery('flex')" data-cat="flex" style="cursor:pointer;"><div class="icon" id="icon-flex">🖼️</div><h3>ফ্লেক্স <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>টেকসই ও রঙিন ফ্লেক্স প্রিন্ট, ইনডোর-আউটডোর দুটোই।</p></div>
+      <div class="card crop" onclick="openGallery('sticker')" data-cat="sticker" style="cursor:pointer;"><div class="icon" id="icon-sticker">🏷️</div><h3>স্টিকার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দোকান, প্রোডাক্ট বা প্রমোশনাল স্টিকার — কাস্টম ডিজাইনে।</p></div>
+      <div class="card crop" onclick="openGallery('leaflet_poster')" data-cat="leaflet_poster" style="cursor:pointer;"><div class="icon" id="icon-leaflet_poster">📄</div><h3>লিফলেট ও পোস্টার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>বিজনেস প্রচারণার জন্য লিফলেট ও পোস্টার ডিজাইন ও প্রিন্ট।</p></div>
+      <div class="card crop" onclick="openGallery('cash_memo')" data-cat="cash_memo" style="cursor:pointer;"><div class="icon" id="icon-cash_memo">🧾</div><h3>ক্যাশ মেমো <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দোকান বা ব্যবসার জন্য কাস্টম ক্যাশ মেমো বই।</p></div>
+      <div class="card crop" onclick="openGallery('fabric_banner')" data-cat="fabric_banner" style="cursor:pointer;"><div class="icon" id="icon-fabric_banner">🧵</div><h3>কাপড়ের ব্যানার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>টেকসই কাপড়ের ব্যানার, যেকোনো সাইজে কাস্টম প্রিন্ট।</p></div>
+      <div class="card crop" onclick="openGallery('visiting_card')" data-cat="visiting_card" style="cursor:pointer;"><div class="icon" id="icon-visiting_card">🪪</div><h3>ভিজিটিং কার্ড <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>প্রফেশনাল ডিজাইনে ভিজিটিং কার্ড, যেকোনো পরিমাণে।</p></div>
+      <div class="card crop" onclick="openGallery('sign_board')" data-cat="sign_board" style="cursor:pointer;"><div class="icon" id="icon-sign_board">💡</div><h3>সাইনবোর্ড / লাইট বক্স <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দোকান বা অফিসের জন্য সাইনবোর্ড ও লাইট বক্স তৈরি।</p></div>
+      <div class="card crop" onclick="openGallery('glass_sticker')" data-cat="glass_sticker" style="cursor:pointer;"><div class="icon" id="icon-glass_sticker">🪟</div><h3>গ্লাস স্টিকার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দোকানের কাচ বা জানালার জন্য কাস্টম ডিজাইনের গ্লাস স্টিকার।</p></div>
+      <div class="card crop" onclick="openGallery('mug_print')" data-cat="mug_print" style="cursor:pointer;"><div class="icon" id="icon-mug_print">☕</div><h3>মগ প্রিন্ট <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>কাস্টম ডিজাইনে মগ প্রিন্ট — গিফট বা প্রমোশনের জন্য।</p></div>
+      <div class="card crop" onclick="openGallery('crest_print')" data-cat="crest_print" style="cursor:pointer;"><div class="icon" id="icon-crest_print">🏆</div><h3>ক্রেস্ট প্রিন্ট <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>সম্মাননা বা অ্যাওয়ার্ডের জন্য কাস্টম ক্রেস্ট তৈরি।</p></div>
+      <div class="card crop" onclick="openGallery('plastic_id_card')" data-cat="plastic_id_card" style="cursor:pointer;"><div class="icon" id="icon-plastic_id_card">🆔</div><h3>প্লাস্টিক আইডি কার্ড <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>অফিস, স্কুল বা প্রতিষ্ঠানের জন্য প্লাস্টিক আইডি কার্ড।</p></div>
+      <div class="card crop" onclick="openGallery('x_banner')" data-cat="x_banner" style="cursor:pointer;"><div class="icon" id="icon-x_banner">📐</div><h3>এক্স ব্যানার <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>জন্মদিন, ব্যাংক বা অফিসের অনুষ্ঠানের জন্য স্ট্যান্ডি এক্স ব্যানার।</p></div>
+      <div class="card crop" onclick="openGallery('wall_canvas')" data-cat="wall_canvas" style="cursor:pointer;"><div class="icon" id="icon-wall_canvas">🖼️</div><h3>ওয়াল ক্যানভাস <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দেয়ালে লাগানোর জন্য কাস্টম ছবি বা ডিজাইনের ক্যানভাস প্রিন্ট।</p></div>
+      <div class="card crop" onclick="openGallery('custom_design')" data-cat="custom_design" style="cursor:pointer;"><div class="icon" id="icon-custom_design">🎨</div><h3>কাস্টম ডিজাইন <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>নিজের আইডিয়া থাকলে সেটা অনুযায়ীও ডিজাইন করে দেই।</p></div>
+    </div>
+  </section>
+
+  <section id="onsite">
+    <h2 class="section-title">আমরা যেসব সার্ভিস গিয়ে করে থাকি</h2>
+    <p class="section-sub">নিচের কাজগুলো আপনার দোকান বা অফিসে গিয়ে সরাসরি করে দেওয়া হয়।</p>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr);">
+      <div class="card crop" onclick="openGallery('onsite_light_box')" data-cat="onsite_light_box" style="cursor:pointer;"><div class="icon" id="icon-onsite_light_box">💡</div><h3>Light Box <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>দোকান বা অফিসের জন্য লাইট বক্স স্থাপন।</p></div>
+      <div class="card crop" onclick="openGallery('onsite_frame')" data-cat="onsite_frame" style="cursor:pointer;"><div class="icon" id="icon-onsite_frame">🖼️</div><h3>Frame <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>ছবি, সার্টিফিকেট বা ডিজাইনের জন্য কাস্টম ফ্রেম।</p></div>
+      <div class="card crop" onclick="openGallery('onsite_glass_sticker')" data-cat="onsite_glass_sticker" style="cursor:pointer;"><div class="icon" id="icon-onsite_glass_sticker">🪟</div><h3>Glass Sticker <span style="font-size:11px;color:var(--gold);font-weight:400;">(ছবি দেখুন)</span></h3><p>কাচ বা জানালার জন্য কাস্টম গ্লাস স্টিকার স্থাপন।</p></div>
+    </div>
+    <p class="price-note" style="margin-top:18px;font-size:14.5px;">বিস্তারিত জানতে কল অথবা WhatsApp-এ মেসেজ দিন।</p>
+  </section>
+
+  <section id="why-us">
+    <div class="delivery-band">
+      <div>
+        <span class="badge mono">TRUSTED WORKSHOP</span>
+        <h3>আমাদের নিজস্ব মেশিন ও অভিজ্ঞ ডিজাইনার</h3>
+        <p>আমাদের রয়েছে নিজস্ব মেশিন — তাই কাজ হয় দ্রুত ও নির্ভরযোগ্য। অভিজ্ঞ ডিজাইনার দ্বারা বিনামূল্যে ডিজাইন করে তারপর প্রিন্ট করে দেওয়া হয়।</p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/8801796216833" target="_blank" rel="noopener">মেসেজ করুন 💬</a>
+    </div>
+  </section>
+
+  <section id="delivery">
+    <div class="delivery-band">
+      <div>
+        <span class="badge mono">HOME DELIVERY ✓</span>
+        <h3>অর্ডার করলে বাসাতেও পৌঁছে দেই</h3>
+        <p>দোকানে এসে অর্ডার করতে না চাইলে, মেসেজ বা কলে অর্ডার দিন — কাজ শেষে বাসায় ডেলিভারি করে দেব। কাস্টম সাইজ, দাম ও ডেলিভারি চার্জ জানতে WhatsApp-এ মেসেজ করুন — প্রোডাক্ট অনুযায়ী জানিয়ে দেওয়া হবে।</p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/8801796216833" target="_blank" rel="noopener">অর্ডার দিন 💬</a>
+    </div>
+  </section>
+
+  <section id="process">
+    <h2 class="section-title">কীভাবে অর্ডার করবেন</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">১</div>
+        <h3>মেসেজ বা কল করুন</h3>
+        <p>কী প্রিন্ট লাগবে, সাইজ ও পরিমাণ জানান।</p>
+      </div>
+      <div class="step">
+        <div class="step-num">২</div>
+        <h3>ডিজাইন ফাইনাল</h3>
+        <p>ডিজাইন দেখে নিশ্চিত করুন, তারপর প্রিন্টে যাবে।</p>
+      </div>
+      <div class="step">
+        <div class="step-num">৩</div>
+        <h3>দোকান থেকে নিন বা ডেলিভারি নিন</h3>
+        <p>দোকানে এসে নিতে পারেন, চাইলে বাসায়ও পৌঁছে যাবে।</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="advance">
+    <h2 class="section-title">অর্ডারের নিয়ম</h2>
+    <p class="section-sub">সব প্রোডাক্ট কাস্টমাইজড হওয়ায় অর্ডারের সময় কিছু নিয়ম মানতে হয়।</p>
+    <div class="cards" style="grid-template-columns:repeat(2,1fr);">
+      <div class="card crop">
+        <div class="icon">💳</div>
+        <h3>৫০% অগ্রিম বাধ্যতামূলক</h3>
+        <p>প্রতিটা প্রোডাক্ট কাস্টম অনুযায়ী তৈরি হয় বলে অর্ডার কনফার্ম করতে ৫০% অগ্রিম পেমেন্ট করতে হবে।</p>
+      </div>
+      <div class="card crop">
+        <div class="icon">🏬</div>
+        <h3>অগ্রিম দিতে না চাইলে</h3>
+        <p>সরাসরি দোকানে চলে আসুন — ঠিকানা: আবুল বিড়ি, ডিটি রোড, পাহাড়তলী, চট্টগ্রাম।</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-band">
+      <div>
+        <h2>প্রিন্টের কাজ শুরু করা যাক</h2>
+        <p>কাস্টম সাইজ, দাম বা ডেলিভারি চার্জ জানতে WhatsApp-এ মেসেজ করুন — দ্রুত রেসপন্স পাবেন। অর্ডার কনফার্মে ৫০% অগ্রিম লাগবে, না চাইলে দোকানে এসে সরাসরি অর্ডার দিতে পারেন।</p>
+        <p style="margin-top:14px;font-size:14px;">📍 আবুল বিড়ি, ডিটি রোড, পাহাড়তলী, চট্টগ্রাম<br>✉️ rkadvertising51@gmail.com</p>
+      </div>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="https://wa.me/8801796216833" target="_blank" rel="noopener">💬 WhatsApp-এ মেসেজ করুন</a>
+        <a class="btn btn-outline" href="tel:+8801796216833">📞 কল করুন — 01796-216833</a>
+        <a class="btn btn-outline" href="mailto:rkadvertising51@gmail.com">✉️ ইমেইল করুন</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  RK Advertising and Digital House • ব্যানার • ফেস্টুন • ফ্লেক্স • স্টিকার • লিফলেট • ক্যাশ মেমো • ভিজিটিং কার্ড<br>
+  আবুল বিড়ি, ডিটি রোড, পাহাড়তলী, চট্টগ্রাম • rkadvertising51@gmail.com
+</footer>
+
+<a class="float-wa" href="https://wa.me/8801796216833" target="_blank" rel="noopener" aria-label="WhatsApp এ মেসেজ করুন">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15c-1.62 0-3.14-.44-4.45-1.2l-.32-.19-3.13.82.84-3.05-.21-.32A8.14 8.14 0 013.85 12c0-4.5 3.65-8.15 8.15-8.15S20.15 7.5 20.15 12 16.5 20.15 12 20.15zm4.52-6.1c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.65.81-.8.97-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.48-.01s-.44.06-.67.31c-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+</a>
+
+<!--
+  প্রতিটা ক্যাটাগরির আসল ছবি যোগ করার নিয়ম:
+  openGallery() ফাংশনের ভেতরে যেখানে placeholder tile তৈরি হয়, সেখানে category অনুযায়ী
+  আসল ছবির লিস্ট বসিয়ে <img src="..."> দিয়ে tile.innerHTML পরিবর্তন করে দিন।
+  ছবি পাঠালে আমি এই অংশ আপডেট করে দেব।
+-->
+<div class="gallery-overlay" id="galleryOverlay" onclick="if(event.target===this)closeGallery()">
+  <div class="gallery-box">
+    <div class="gallery-close" onclick="closeGallery()">✕</div>
+    <h3 id="galleryTitle">কাজের ছবি</h3>
+    <p class="sub">নিচে আমাদের করা কিছু নমুনা ছবি (শীঘ্রই আসল ছবি যোগ করা হবে)</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</div>
+
+<script>
+  var siteData = { hero: [], categories: [] };
+
+  function findCategory(id){
+    for(var i=0;i<siteData.categories.length;i++){
+      if(siteData.categories[i].id === id) return siteData.categories[i];
+    }
+    return null;
+  }
+
+  function renderHero(){
+    var carousel = document.getElementById('heroCarousel');
+    carousel.innerHTML = '';
+    var imgs = (siteData.hero || []).filter(Boolean);
+    if(!imgs.length) return;
+    imgs.forEach(function(src, i){
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = 'ব্যানার নমুনা ' + (i+1);
+      if(i === 0) img.classList.add('active');
+      carousel.appendChild(img);
+    });
+    if(imgs.length > 1){
+      var idx = 0;
+      var slides = carousel.querySelectorAll('img');
+      setInterval(function(){
+        slides[idx].classList.remove('active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+      }, 3200);
+    }
+  }
+
+  function renderIcons(){
+    siteData.categories.forEach(function(cat){
+      if(!cat.icon) return;
+      var el = document.getElementById('icon-' + cat.id);
+      if(!el) return;
+      el.innerHTML = '<img src="' + cat.icon + '" alt="' + (cat.name || '') + '" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:6px;">';
+      el.style.width = '44px';
+      el.style.height = '44px';
+      el.style.overflow = 'hidden';
+      el.style.borderRadius = '6px';
+    });
+  }
+
+  function openGallery(catId){
+    var cat = findCategory(catId);
+    var title = cat ? cat.name : catId;
+    document.getElementById('galleryTitle').textContent = title + ' এর কিছু কাজ';
+    var grid = document.getElementById('galleryGrid');
+    grid.innerHTML = '';
+
+    var images = (cat && cat.images) ? cat.images.filter(Boolean) : [];
+
+    if(images.length){
+      images.forEach(function(src, i){
+        var tile = document.createElement('div');
+        tile.className = 'gallery-tile has-img';
+        tile.innerHTML = '<img src="' + src + '" alt="' + title + ' ছবি ' + (i+1) + '" loading="lazy">';
+        grid.appendChild(tile);
+      });
+    }
+    var emptySlots = Math.max(0, 6 - images.length);
+    for(var j=1;j<=emptySlots;j++){
+      var empty = document.createElement('div');
+      empty.className = 'gallery-tile';
+      empty.innerHTML = '<span class="cam">📷</span>ছবি যোগ হবে';
+      grid.appendChild(empty);
+    }
+    document.getElementById('galleryOverlay').classList.add('open');
+  }
+  function closeGallery(){
+    document.getElementById('galleryOverlay').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeGallery();
+  });
+
+  fetch('site-data.json', {cache:'no-store'})
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      siteData = data;
+      renderHero();
+      renderIcons();
+    })
+    .catch(function(err){ console.error('site-data.json লোড করা যায়নি', err); });
+</script>
+
+</body>
+</html>

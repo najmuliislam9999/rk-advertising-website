@@ -1,0 +1,133 @@
+{
+  "hero": [
+    "images/banner-1.jpg",
+    "images/banner-2.jpg",
+    "images/banner-3.jpg",
+    "images/banner-4.jpg",
+    "images/banner-5.jpg",
+    "images/banner-6.jpg"
+  ],
+  "categories": [
+    {
+      "id": "banner",
+      "name": "ব্যানার",
+      "icon": "",
+      "images": [
+        "images/banner-1.jpg",
+        "images/banner-2.jpg",
+        "images/banner-3.jpg",
+        "images/banner-4.jpg",
+        "images/banner-5.jpg",
+        "images/banner-6.jpg"
+      ]
+    },
+    {
+      "id": "festoon",
+      "name": "ফেস্টুন",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "flex",
+      "name": "ফ্লেক্স",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "sticker",
+      "name": "স্টিকার",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "leaflet_poster",
+      "name": "লিফলেট ও পোস্টার",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "cash_memo",
+      "name": "ক্যাশ মেমো",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "fabric_banner",
+      "name": "কাপড়ের ব্যানার",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "visiting_card",
+      "name": "ভিজিটিং কার্ড",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "sign_board",
+      "name": "সাইনবোর্ড / লাইট বক্স",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "glass_sticker",
+      "name": "গ্লাস স্টিকার",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "mug_print",
+      "name": "মগ প্রিন্ট",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "crest_print",
+      "name": "ক্রেস্ট প্রিন্ট",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "plastic_id_card",
+      "name": "প্লাস্টিক আইডি কার্ড",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "x_banner",
+      "name": "এক্স ব্যানার",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "wall_canvas",
+      "name": "ওয়াল ক্যানভাস",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "custom_design",
+      "name": "কাস্টম ডিজাইন",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "onsite_light_box",
+      "name": "Light Box",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "onsite_frame",
+      "name": "Frame",
+      "icon": "",
+      "images": []
+    },
+    {
+      "id": "onsite_glass_sticker",
+      "name": "Glass Sticker",
+      "icon": "",
+      "images": []
+    }
+  ]
+}
