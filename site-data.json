@@ -5,7 +5,7 @@
     "images/uploads/224bfced-d49d-475e-abc0-d45666f5fb58.png",
     "images/uploads/fe7f8233-0c9f-48f4-b059-a9af5486ccd5.png",
     "images/uploads/99f672bc-35ed-45eb-bae3-ea3629fcd4c6.png",
-    "images/uploads/f3dcd757-594c-4709-abc7-9fd9809346df.png"
+    "images/uploads/b839c493-8c4b-4ecd-97af-088267604239.png"
   ],
   "categories": [
     {
@@ -13,12 +13,12 @@
       "name": "ব্যানার",
       "icon": "",
       "images": [
-        "images/banner-1.jpg",
-        "images/banner-2.jpg",
-        "images/banner-3.jpg",
-        "images/banner-4.jpg",
-        "images/banner-5.jpg",
-        "images/banner-6.jpg"
+        "images/uploads/b839c493-8c4b-4ecd-97af-088267604239.png",
+        "images/uploads/889da61f-20bb-40e4-8f06-8d3704fc8821.png",
+        "images/uploads/224bfced-d49d-475e-abc0-d45666f5fb58.png",
+        "images/uploads/99f672bc-35ed-45eb-bae3-ea3629fcd4c6.png",
+        "images/uploads/f3dcd757-594c-4709-abc7-9fd9809346df.png",
+        "images/uploads/fe7f8233-0c9f-48f4-b059-a9af5486ccd5.png"
       ]
     },
     {
@@ -81,7 +81,7 @@
     {
       "id": "mug_print",
       "name": "মগ প্রিন্ট",
-      "icon": "",
+      "icon": "images/uploads/298ea928-5df3-4b3b-bce2-b968e135d642.png",
       "images": []
     },
     {
@@ -99,7 +99,7 @@
     {
       "id": "x_banner",
       "name": "এক্স ব্যানার",
-      "icon": "",
+      "icon": "images/uploads/365cd55b-db20-4791-b411-373cd294cc48.png",
       "images": []
     },
     {
