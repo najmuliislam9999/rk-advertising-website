@@ -25,7 +25,10 @@
       "id": "festoon",
       "name": "ফেস্টুন",
       "icon": "images/uploads/e64d97c2-d2ce-47ac-ac7a-91361372cb58.png",
-      "images": []
+      "images": [
+        "images/uploads/e64d97c2-d2ce-47ac-ac7a-91361372cb58.png",
+        "images/uploads/87bae853-9281-4bad-9277-b1f89ae7cdb5.png"
+      ]
     },
     {
       "id": "flex",
