@@ -26,6 +26,27 @@ collections:
               name: "src"
               widget: "image"
 
+          - label: "পেমেন্ট"
+            name: "payment"
+            widget: "object"
+            fields:
+              - label: "bKash লোগো"
+                name: "bkash_logo"
+                widget: "image"
+                required: false
+              - label: "bKash নাম্বার"
+                name: "bkash_number"
+                widget: "string"
+                required: false
+              - label: "Nagad লোগো"
+                name: "nagad_logo"
+                widget: "image"
+                required: false
+              - label: "Nagad নাম্বার"
+                name: "nagad_number"
+                widget: "string"
+                required: false
+
           - label: "ক্যাটাগরি সমূহ"
             name: "categories"
             widget: "list"
